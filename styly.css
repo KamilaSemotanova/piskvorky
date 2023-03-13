@@ -14,8 +14,11 @@ html {
 .intro {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 350px;
     text-align: center;
+    position: relative;
+    top: 4rem;
+    left: calc((100vw - 350px)/2);
 }
 
 .intro__photo {
