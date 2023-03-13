@@ -19,6 +19,7 @@ html {
     position: relative;
     top: 4rem;
     left: calc((100vw - 350px)/2);
+    font-family: sans-serif;
 }
 
 .intro__photo {
@@ -30,7 +31,6 @@ html {
 }
 
 .intro__paragraph {
-    font-family: sans-serif;
     font-size: 90%;
     padding: 1rem;
 }
@@ -41,10 +41,14 @@ html {
 }
 
 .intro__rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1fcca4;
     color: #ffffff;
-    height: 2rem;
+    height: 2.5rem;
     text-decoration: none;
+    border-bottom: 1px solid #283e50;
 }
 
 .intro__rules:hover {
@@ -52,9 +56,12 @@ html {
 }
 
 .intro__start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #0197f6;
     color: #ffffff;
-    height: 2rem;
+    height: 2.5rem;
     text-decoration: none;
 }
 
