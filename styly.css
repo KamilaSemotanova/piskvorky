@@ -12,9 +12,7 @@ body {
     flex-direction: column;
     width: 350px;
     text-align: center;
-    position: relative;
-    top: 4rem;
-    left: calc((100vw - 350px)/2);
+    margin: 5rem auto auto auto;
     font-family: sans-serif;
 }
 
@@ -23,7 +21,7 @@ body {
 }
 
 .intro__title {
-    font-family: "Lobster";
+    font-family: "Lobster", sans-serif;
 }
 
 .intro__paragraph {
@@ -37,9 +35,8 @@ body {
 }
 
 .intro__rules {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    padding-top: 0.6rem;
     background-color: #1fcca4;
     color: #ffffff;
     height: 2.5rem;
@@ -52,9 +49,8 @@ body {
 }
 
 .intro__start {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    padding-top: 0.6rem;
     background-color: #0197f6;
     color: #ffffff;
     height: 2.5rem;
