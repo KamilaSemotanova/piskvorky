@@ -13,7 +13,7 @@ body {
     width: 350px;
     text-align: center;
     margin: 5rem auto auto auto;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .intro__photo {
@@ -76,6 +76,9 @@ body {
 }
 
 .game__menuPlayer {
+    text-transform: uppercase;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .game__menuHome {
@@ -106,12 +109,14 @@ body {
 
 .game__field {
     width: 80%;
-    border-bottom: 1px solid gray;
+    aspect-ratio: 1 / 1;
+    border: 1px solid gray;
     margin: auto;
+
 }
 
 .game__field button {
-    float: inline-start;
+    float: left;
     border-radius: 0px;
     border: 1px solid gray;
     background-color: rgb(226, 188, 205);
@@ -134,3 +139,7 @@ body {
     background-color: rgb(247, 216, 230);
     opacity: 70%;
 }
+
+/* border of game__field should be there wider
+whole menu is missing styling
+in hra.html is missing column in hraje*/
