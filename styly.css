@@ -73,12 +73,12 @@ body {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    height: 10%;
     margin: auto;
 }
 
 .game__menuLeft {
     display: flex;
+    align-items: center;
 }
 
 .game__menuRight {
@@ -89,7 +89,7 @@ body {
     text-transform: uppercase;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    height: 50%;
+    font-size: 20px;
 }
 
 .game__menuHome {
@@ -153,5 +153,3 @@ body {
     background-color: rgb(247, 216, 230);
     opacity: 70%;
 }
-
-/* whole menu is missing styling*/
