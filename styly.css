@@ -61,7 +61,7 @@ body {
     background-color: #0090e9;
 }
 
-/* Hra.html */
+/* ------------ Hra.html ---------------- */
 
 .game__title {
     font-family: "Lobster", sans-serif;
@@ -71,18 +71,37 @@ body {
 
 .game__menu {
     display: flex;
+    width: 80%;
+    margin: auto;
 }
 
-.game__menuPlayer {}
+.game__menuPlayer {
+}
 
 .game__menuHome {
     display: block;
     background-color: #1fcca4;
 }
 
+.game__menuHome:hover {
+    background-color: #1cbb96;
+}
+
+.game__menuHome:focus {
+    background-color: #1cbb96;
+}
+
 .game__menuRestart {
     display: block;
     background-color: #0197f6;
+}
+
+.game__menuRestart:hover {
+    background-color: #0090e9;
+}
+
+.game__menuRestart:focus {
+    background-color: #0090e9;
 }
 
 .game__field {
@@ -103,6 +122,13 @@ body {
 }
 
 .game__field button:hover {
+    transition: 0.1s;
+    border: 1px solid gray;
+    background-color: rgb(247, 216, 230);
+    opacity: 70%;
+}
+
+.game__field button:focus {
     transition: 0.1s;
     border: 1px solid gray;
     background-color: rgb(247, 216, 230);
