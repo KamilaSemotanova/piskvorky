@@ -3,8 +3,8 @@
 }
 
 body {
-  background-image: linear-gradient(#615dad, #ffc8da);
-  background-attachment: fixed;
+    background-image: linear-gradient(#615dad, #ffc8da);
+    background-attachment: fixed;
 }
 
 .intro {
