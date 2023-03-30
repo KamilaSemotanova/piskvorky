@@ -63,6 +63,11 @@ body {
 
 /* ------------ Hra.html ---------------- */
 
+.game {
+    max-width: 80vmin;
+    margin: auto;
+}
+
 .game__title {
     font-family: "Lobster", sans-serif;
     color: white;
