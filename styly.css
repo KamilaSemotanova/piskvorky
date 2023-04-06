@@ -7,10 +7,15 @@ body {
     background-attachment: fixed;
 }
 
+.intro__body {
+    max-width: 80vmin;
+    margin: auto;
+}
+
 .intro {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 80%;
     text-align: center;
     margin: 5rem auto auto auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -70,6 +75,7 @@ body {
 
 .game__title {
     font-family: "Lobster", sans-serif;
+    font-weight: lighter;
     color: white;
     text-align: center;
 }
@@ -81,13 +87,10 @@ body {
     margin: auto;
 }
 
-.game__menuLeft {
-    display: flex;
-    align-items: center;
-}
-
+.game__menuLeft,
 .game__menuRight {
     display: flex;
+    align-items: center;
 }
 
 .game__menuPlayer {
@@ -108,10 +111,6 @@ body {
     background-color: #1cbb96;
 }
 
-.game__menuHome:focus {
-    background-color: #1cbb96;
-}
-
 .game__menuRestart {
     border-radius: 3px;
     padding: 0.4rem;
@@ -120,10 +119,6 @@ body {
 }
 
 .game__menuRestart:hover {
-    background-color: #0090e9;
-}
-
-.game__menuRestart:focus {
     background-color: #0090e9;
 }
 
@@ -141,20 +136,14 @@ body {
     background-color: rgb(226, 188, 205);
     cursor: pointer;
     opacity: 80%;
-    width: calc(100%/10);
+    width: 10%;
     aspect-ratio: 1 / 1;
 }
 
-.game__field button:hover {
+.game__field button:hover,
+.game__field button:focus {
     transition: 0.1s;
-    border: 1px solid gray;
     background-color: rgb(247, 216, 230);
     opacity: 70%;
 }
 
-.game__field button:focus {
-    transition: 0.1s;
-    border: 1px solid gray;
-    background-color: rgb(247, 216, 230);
-    opacity: 70%;
-}
