@@ -103,7 +103,7 @@ body {
 .game__menuHome {
     border-radius: 3px;
     padding: 0.4rem;
-    margin: auto 0.4rem ;
+    margin: auto 0.4rem;
     background-color: #1fcca4;
 }
 
@@ -114,7 +114,7 @@ body {
 .game__menuRestart {
     border-radius: 3px;
     padding: 0.4rem;
-    margin: auto 0.4rem ;
+    margin: auto 0.4rem;
     background-color: #0197f6;
 }
 
@@ -147,3 +147,41 @@ body {
     opacity: 70%;
 }
 
+/*--------- OŽIVENÍ ---------*/
+
+.board__fieldPlayer--circle {
+    height: 60%;
+    aspect-ratio: 1 / 1;
+    border: 2px solid black;
+    border-radius: 100%;
+    position:relative;
+}
+
+.board__fieldPlayer--cross {
+    height: 60%;
+    aspect-ratio: 1 / 1;
+    position:relative;
+    transform:rotate(45deg);
+}
+ 
+.board__fieldPlayer--cross:before, .board__fieldPlayer--cross:after {
+    content:"";
+    position:absolute;
+    background: rgb(33, 33, 33);
+ }
+ 
+.board__fieldPlayer--cross:before {
+    left:75%;
+    width: 10%;
+    margin-left:-15%;
+    margin-top: -30%;
+    height:135%;
+ }
+ 
+.board__fieldPlayer--cross:after {
+    top: 58%;
+    height:10%; /* tloušťka */
+    margin-top:-25%;
+    margin-left: -48%;
+    width:135%; /* délka */
+ }
