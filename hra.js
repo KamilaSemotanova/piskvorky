@@ -1,12 +1,18 @@
-let currentPlayer = 'circle'
+let currentPlayer = 'circle';
 
-document.querySelector('button:nth-child(1)')
-document.querySelector('button:nth-child(2)')
-document.querySelector('button:nth-child(3)')
-document.querySelector('button:nth-child(4)')
-document.querySelector('button:nth-child(5)')
-document.querySelector('button:nth-child(6)')
-document.querySelector('button:nth-child(7)')
-document.querySelector('button:nth-child(8)')
-document.querySelector('button:nth-child(9)')
-document.querySelector('button:nth-child(10)')
+const addClass = (event) => {
+  event.target.classList.add('board__fieldPlayer--circle');
+};
+
+document.querySelector('#buttonInField1').addEventListener('click', (event) => {
+  event.target.classList.add('board__fieldPlayer--circle');
+});
+document.querySelector('#buttonInField2').addEventListener('click', addClass);
+document.querySelector('#buttonInField3').addEventListener('click', addClass);
+document.querySelector('#buttonInField4').addEventListener('click', addClass);
+document.querySelector('#buttonInField5').addEventListener('click', addClass);
+document.querySelector('#buttonInField6').addEventListener('click', addClass);
+document.querySelector('#buttonInField7').addEventListener('click', addClass);
+document.querySelector('#buttonInField8').addEventListener('click', addClass);
+document.querySelector('#buttonInField9').addEventListener('click', addClass);
+document.querySelector('#buttonInField10').addEventListener('click', addClass);
