@@ -124,6 +124,7 @@ body {
     width: 80vmin;
     aspect-ratio: 1 / 1;
     border: 1px solid gray;
+    background-color: rgb(226, 188, 205);
     margin: 1rem auto 4rem;
 }
 
@@ -160,20 +161,35 @@ body {
     border-radius: 100%;
     border: 3px solid rgb(36, 36, 36);
     margin-bottom: -0.3rem;
+    animation: appearing 0.15s;
+}
+
+.board__fieldPlayer--cross {
+    animation: appearing 0.15s;
 }
 
 .board__fieldPlayer--cross::after,
 .board__fieldPlayer--cross::before {
-  content: '';
-  display: inline-block;
-  height: 70%;
-  border: 2px solid rgb(36, 36, 36);
-  transform: rotate(45deg);
-  position: relative;
-  margin-bottom: -0.3rem;
+    content: '';
+    display: inline-block;
+    height: 70%;
+    border: 2px solid rgb(36, 36, 36);
+    transform: rotate(45deg);
+    position: relative;
+    margin-bottom: -0.3rem;
 }
 
 .board__fieldPlayer--cross::before {
-  transform: rotate(-45deg);
-  left: 4px;
+    transform: rotate(-45deg);
+    left: 4px;
+}
+
+@keyframes appearing {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
