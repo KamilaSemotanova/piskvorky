@@ -29,13 +29,12 @@ const addClass = (event) => {
     event.target.classList.add('board__fieldPlayer--circle');
     event.target.disabled = true;
     currentPlayer = 'cross';
-    document.querySelector(".game__menuPlayerType").innerHTML = playerCrossElm
+    document.querySelector('.game__menuPlayerType').innerHTML = playerCrossElm;
   } else {
     event.target.classList.add('board__fieldPlayer--cross');
     event.target.disabled = true;
     currentPlayer = 'circle';
-    document.querySelector(".game__menuLeft").innerHTML = playerCircleElm
-    document.querySelector(".game__menuPlayerType").innerHTML = playerCircleElm
+    document.querySelector('.game__menuPlayerType').innerHTML = playerCircleElm;
   }
 };
 
@@ -69,3 +68,11 @@ document
 document
   .querySelector('button:nth-child(10)')
   .addEventListener('click', addClass);
+
+document
+  .querySelector('.game__menuRestart')
+  .addEventListener('click', (event) => {
+    if (confirm('Opravdu chceš hru restartovat?') === false) {
+      event.preventDefault();
+    }
+  });
