@@ -39,40 +39,16 @@ const addClass = (event) => {
 };
 
 document
-  .querySelector('button:nth-child(1)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(2)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(3)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(4)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(5)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(6)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(7)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(8)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(9)')
-  .addEventListener('click', addClass);
-document
-  .querySelector('button:nth-child(10)')
-  .addEventListener('click', addClass);
-
-document
   .querySelector('.game__menuRestart')
   .addEventListener('click', (event) => {
     if (confirm('Opravdu chceš hru restartovat?') === false) {
       event.preventDefault();
     }
   });
+
+const allButtonsElm = document.querySelectorAll('.row button');
+console.log(allButtonsElm);
+
+allButtonsElm.forEach((eventButton) => {
+  eventButton.addEventListener('click', addClass);
+});
