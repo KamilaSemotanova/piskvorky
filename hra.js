@@ -1,3 +1,5 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let currentPlayer = 'circle';
 
 const playerCircleElm = `
@@ -27,15 +29,25 @@ const playerCrossElm = `
 const addClass = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__fieldPlayer--circle');
-    event.target.disabled = true;
     currentPlayer = 'cross';
     document.querySelector('.game__menuPlayerType').innerHTML = playerCrossElm;
+
+    const buttonArrayElm = Array.from(allButtonsElm);
+    buttonArrayElm.map(conditionForValue);
+
+    const winner = findWinner(buttonArrayElm);
   } else {
     event.target.classList.add('board__fieldPlayer--cross');
-    event.target.disabled = true;
     currentPlayer = 'circle';
     document.querySelector('.game__menuPlayerType').innerHTML = playerCircleElm;
+
+    const buttonArrayElm = Array.from(allButtonsElm);
+    buttonArrayElm.map(conditionForValue);
+    console.log(buttonArrayElm);
+
+    const winner = findWinner(buttonArrayElm);
   }
+  event.target.disabled = true;
 };
 
 document
@@ -47,8 +59,19 @@ document
   });
 
 const allButtonsElm = document.querySelectorAll('.row button');
-console.log(allButtonsElm);
 
 allButtonsElm.forEach((eventButton) => {
   eventButton.addEventListener('click', addClass);
 });
+
+// Condition for adding value in array
+
+const conditionForValue = (symbol) => {
+  if (symbol.classList.contains('board__fieldPlayer--cross')) {
+    return 'x';
+  } else if (symbol.classList.contains('board__fieldPlayer--circle')) {
+    return 'o';
+  } else {
+    return '_';
+  }
+};
