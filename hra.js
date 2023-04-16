@@ -40,14 +40,20 @@ const conditionForValue = (value) => {
 
 const conditionForWin = (winner) => {
   if (winner === 'o') {
-    setTimeout(alert('Vyhrálo kolečko!'), 700);
-    location.reload();
+    setTimeout(() => {
+      alert('Vyhrálo kolečko! 🎉');
+      location.reload();
+    }, 200);
   } else if (winner === 'x') {
-    setTimeout(alert('Vyhrál křížek!'), 700);
-    location.reload();
-  } else if (winner === "tie") {
-    setTimeout(alert('Hra skončila nerozhodně.'), 700);
-    location.reload();
+    setTimeout(() => {
+      alert('Vyhrál křížek! 🎉');
+      location.reload();
+    }, 200);
+  } else if (winner === 'tie') {
+    setTimeout(() => {
+      alert('Hra skončila nerozhodně.');
+      location.reload();
+    }, 200);
   }
 };
 
