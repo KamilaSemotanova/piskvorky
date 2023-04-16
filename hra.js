@@ -38,24 +38,40 @@ const conditionForValue = (value) => {
   }
 };
 
+const conditionForWin = (winner) => {
+  if (winner === 'o') {
+    setTimeout(alert('Vyhrálo kolečko!'), 700);
+    location.reload();
+  } else if (winner === 'x') {
+    setTimeout(alert('Vyhrál křížek!'), 700);
+    location.reload();
+  } else if (winner === "tie") {
+    setTimeout(alert('Hra skončila nerozhodně.'), 700);
+    location.reload();
+  }
+};
+
 const addClass = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__fieldPlayer--circle');
-    currentPlayer = 'cross';
     document.querySelector('.game__menuPlayerType').innerHTML = playerCrossElm;
 
     const buttonArrayElm = Array.from(allButtonsElm).map(conditionForValue);
 
     const winner = findWinner(buttonArrayElm);
+    conditionForWin(winner);
+
+    currentPlayer = 'cross';
   } else {
     event.target.classList.add('board__fieldPlayer--cross');
-    currentPlayer = 'circle';
     document.querySelector('.game__menuPlayerType').innerHTML = playerCircleElm;
 
     const buttonArrayElm = Array.from(allButtonsElm).map(conditionForValue);
-    console.log(buttonArrayElm);
 
     const winner = findWinner(buttonArrayElm);
+    conditionForWin(winner);
+
+    currentPlayer = 'circle';
   }
   event.target.disabled = true;
 };
