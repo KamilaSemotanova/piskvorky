@@ -26,14 +26,25 @@ const playerCrossElm = `
   />
   </svg>`;
 
+// Condition for adding value in array
+
+const conditionForValue = (value) => {
+  if (value.classList.contains('board__fieldPlayer--cross')) {
+    return 'x';
+  } else if (value.classList.contains('board__fieldPlayer--circle')) {
+    return 'o';
+  } else {
+    return '_';
+  }
+};
+
 const addClass = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__fieldPlayer--circle');
     currentPlayer = 'cross';
     document.querySelector('.game__menuPlayerType').innerHTML = playerCrossElm;
 
-    const buttonArrayElm = Array.from(allButtonsElm);
-    buttonArrayElm.map(conditionForValue);
+    const buttonArrayElm = Array.from(allButtonsElm).map(conditionForValue);
 
     const winner = findWinner(buttonArrayElm);
   } else {
@@ -41,8 +52,7 @@ const addClass = (event) => {
     currentPlayer = 'circle';
     document.querySelector('.game__menuPlayerType').innerHTML = playerCircleElm;
 
-    const buttonArrayElm = Array.from(allButtonsElm);
-    buttonArrayElm.map(conditionForValue);
+    const buttonArrayElm = Array.from(allButtonsElm).map(conditionForValue);
     console.log(buttonArrayElm);
 
     const winner = findWinner(buttonArrayElm);
@@ -63,15 +73,3 @@ const allButtonsElm = document.querySelectorAll('.row button');
 allButtonsElm.forEach((eventButton) => {
   eventButton.addEventListener('click', addClass);
 });
-
-// Condition for adding value in array
-
-const conditionForValue = (symbol) => {
-  if (symbol.classList.contains('board__fieldPlayer--cross')) {
-    return 'x';
-  } else if (symbol.classList.contains('board__fieldPlayer--circle')) {
-    return 'o';
-  } else {
-    return '_';
-  }
-};
