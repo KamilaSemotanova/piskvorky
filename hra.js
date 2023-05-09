@@ -26,8 +26,6 @@ const playerCrossElm = `
   />
   </svg>`;
 
-// Condition for adding value in array
-
 const conditionForValue = (value) => {
   if (value.classList.contains('board__fieldPlayer--cross')) {
     return 'x';
@@ -66,6 +64,23 @@ const addClass = (event) => {
 
     const winner = findWinner(buttonArrayElm);
     conditionForWin(winner);
+
+    fetch('https://piskvorky.czechitas-podklady.cz/api/suggest-next-move', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        board: buttonArrayElm,
+        player: 'x',
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const { x, y } = data.position;
+        const placement = x + y * 10;
+        allButtonsElm[placement].click();
+      });
 
     currentPlayer = 'cross';
   } else {
